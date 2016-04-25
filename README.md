@@ -1,5 +1,6 @@
-# scala-impatient-cheatsheet
-Scala for the Impatient Cheatsheet
+# Scala for the Impatient
+
+Cheatsheet taken from Cay S. Horstmann "Scala the Impatient Cheatsheet".
 
 ## Operators
 - Infix notation `x op y` is `x.op(y)`, postfix notation `x op` is `x.op()`
@@ -71,9 +72,9 @@ class Point(val x: Double, val y: Double) {
     math.sqrt(dx * dx + dy * dy)
   }
 }
-object Point {      // Companion object
+object Point {                      // Companion object
   def distance(a: Double, b: Double) = math.sqrt(a * a + b * b) // Like Java static method
-  val origin = new Point(0, 0)        // Like Java static field
+  val origin = new Point(0, 0)                                  // Like Java static field
 }
 ```
 ## Inheritance
@@ -109,13 +110,13 @@ object App extends ConsoleLogger with TimestampLogger
 
 ## Imports
 ```scala
-import java.awt._       // is wildcard, like * in Java
-import java.awt.Color._ // RED is java.awt.Color.RED. Like Java import static
+import java.awt._                    // _ is wildcard, like * in Java
+import java.awt.Color._              // RED is java.awt.Color.RED. Like Java import static
 import java.awt.{Color,Font}
 import java.awt.{List => AWTList}   // AWTList is java.awt.List
-import java.awt.{List => _,_}       // Imports everything but List from java.awt
+import java.awt.{List => _, _}      // Imports everything but List from java.awt
 val x = Some(42)    // Same as scala.Some
-  // scala, scala.Predef, and java.lang are always imported
+                    // scala, scala.Predef, and java.lang are always imported
 def sq(x) = { import scala.math._; pow(x, 2) }  // Imports can be anywhere
 import math._       // Same as import scala.math._.Imports nest in Scala
 ```
