@@ -1,17 +1,18 @@
 # Scala for the Impatient
 
-Cheatsheet taken from Cay S. Horstmann "Scala the Impatient Cheatsheet".
+Cheatsheet taken from Cay S. Horstmann's book "Scala the Impatient Cheatsheet".
 
 ## Operators
-- Infix notation `x op y` is `x.op(y)`, postfix notation `x op` is `x.op()`
-- Only `+ - ! ~` can be prefix -- define method `unary_op`
-- Assignment `x op= y` is `x = x op y` unless defined seperately
-- Precedence depends on *first* character, except for assignments
-
-- Right associative if *last* character is a colon :
-- `x(i) = x(j)` is `x.update(i, x.apply(j))`
-- There is no `++` or `--` for numbers. Use `x += 1; y -= 1`
-- Use `x == y` to compare objects -- it calls `equals`
+- Infix notation `x op y` is `x.op(y)`, postfix notation `x op` is `x.op()`.
+- Only `+ - ! ~` can be prefix -- define method `unary_op`.
+- Assignment `x op= y` is `x = x op y` unless defined seperately.
+- Precedence depends on *first* character, except for assignments.
+| /Highest  precedence/ | Other operators | * / % | + - | : | < > | ! = | & | ^ | | | Not operator | Assignements | /Lowest precedence/ |
+|-----------------------|-----------------|-------|-----|---|-----|-----|---|---|---|--------------|--------------|---------------------|
+- Right associative if *last* character is a colon `:`.
+- `x(i) = x(j)` is `x.update(i, x.apply(j))`.
+- There is no `++` or `--` for numbers. Use `x += 1; y -= 1`.
+- Use `x == y` to compare objects -- it calls `equals`.
 
 ## Functions
 ```scala
