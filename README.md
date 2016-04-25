@@ -8,8 +8,9 @@ Cheatsheet taken from Cay S. Horstmann's book "Scala the Impatient Cheatsheet".
 - Assignment `x op= y` is `x = x op y` unless defined seperately.
 - Precedence depends on *first* character, except for assignments.
 
-| /Highest  precedence/ | Other operators | * / % | + - | : | < > | ! = | & | ^ | | | Not operator | Assignements | /Lowest precedence/ |
+| /Highest  precedence/ | Other operators | * / % | + - | : | < > | ! = | & | ^ | l | Not operator | Assignements | /Lowest precedence/ |
 |-----------------------|-----------------|-------|-----|---|-----|-----|---|---|---|--------------|--------------|---------------------|
+
 
 - Right associative if *last* character is a colon `:`.
 - `x(i) = x(j)` is `x.update(i, x.apply(j))`.
