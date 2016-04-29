@@ -8,7 +8,7 @@ Cheatsheet taken from Cay S. Horstmann's book "Scala the Impatient Cheatsheet".
 - Assignment `x op= y` is `x = x op y` unless defined seperately.
 - Precedence depends on *first* character, except for assignments.
 
-| /Highest  precedence/ | Other operators | * / % | + - | : | < > | ! = | & | ^ | l | Not operator | Assignements | /Lowest precedence/ |
+| <<Highest  precedence | Other operators | * / % | + - | : | < > | ! = | & | ^ | l | Not operator | Assignements | <<Lowest precedence |
 |-----------------------|-----------------|-------|-----|---|-----|-----|---|---|---|--------------|--------------|---------------------|
 
 
@@ -39,12 +39,12 @@ def sum(xs: Int*): Int =            // Return type required for recursive functi
 
 ## `for` Loops
 ```scala
-for (i <- 1 to n) println(i)                      // i iterates through all values in 1 to n
+for (i <- 1 to n) println(i)                        // i iterates through all values in 1 to n
 for (i <- 1 to 9; j <- 1 to 9) println(i * 10 + j)  // Multiple iterates
 for (i <- 1 to 9  if i != 5; j <- 1 to 9 if i != j) println(i * 10 + j)   // Guards
 for (i <- 1 to 3; from = 4 - i; j <- from to 3) println(i * 10 + j)       // Variable
-val r = for (i <- 1 to n) yield i * i       // r is a sequence 1, 4, 9, ...
-for ((x, y) <- pairs) println(x + " " + y)  // Destructures pairs and other values with extractors
+val r = for (i <- 1 to n) yield i * i               // r is a sequence 1, 4, 9, ...
+for ((x, y) <- pairs) println(x + " " + y)          // Destructures pairs and other values with extractors
 ```
 
 ## Pattern Matching
@@ -70,7 +70,7 @@ try { ... } catch {   // Use the same syntax for catch clauses
 class Point(val x: Double, val y: Double) {
   // Primary constructor defines and initializes fields: new Point(3, 4)
   // val or var in class or primary constructor defines property: p.x
-  this() { this(0, 0) }             // Auxilary constructor
+  this() { this(0, 0) }             // Auxiliary constructor
   def distance(other: Point) = {    // Method
     val dx = x - other.x; val dy = y - other.y
     math.sqrt(dx * dx + dy * dy)
@@ -87,13 +87,13 @@ class Employee(name: String) extends Person(name) {
   // Call primary constructor of superclass
   var salary = 0.0
   override def toString = super.toString + "[salary =" + salary + "]"
-    // Use override when overriding a method
+  // Use override when overriding a method
 }
 
-if (p.isINstanceOf[Employee]) {           // Like Java instanceOf
-  val e = p.asInstanceOf[Employee]; ...   // Like Java cast(Employee)
+if (p.isINstanceOf[Employee]) {               // Like Java instanceOf
+  val e = p.asInstanceOf[Employee]; ...       // Like Java cast(Employee)
 }
-if (p.getClass == classOf[Employee]) { ... } // Like Java Employee.class
+if (p.getClass == classOf[Employee]) { ... }  // Like Java Employee.class
 ```
 
 ## Traits
